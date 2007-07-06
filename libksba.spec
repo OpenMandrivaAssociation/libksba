@@ -3,9 +3,9 @@
 
 Summary:        Library handling X.509 certificates and CMS data
 Name:           libksba
-Version:        1.0.0
+Version:        1.0.2
 Release:        %mkrel 1
-License:        GPL
+License:        GPLv3
 Group:          System/Libraries
 URL:            http://www.gnupg.org/
 Source0:        ftp://ftp.gnupg.org/gcrypt/%{name}/%{name}-%{version}.tar.bz2
