@@ -1,10 +1,11 @@
-%define major   8
+%define major 8
 %define libname %mklibname ksba %{major}
+%define develname %mklibname ksba -d
 
 Summary:        Library handling X.509 certificates and CMS data
 Name:           libksba
-Version:        1.0.2
-Release:        %mkrel 2
+Version:        1.0.3
+Release:        %mkrel 1
 License:        GPLv3
 Group:          System/Libraries
 URL:            http://www.gnupg.org/
@@ -29,13 +30,14 @@ Provides:       %{name} = %{version}-%{release}
 KSBA is a library designed to build software based
 on the X.509 and CMS protocols.
 
-%package -n %{libname}-devel
+%package -n %{develname}
 Summary:        Development files for %{name} package
 Group:          Development/Other
-Requires:       %{libname} = %{version}
+Requires:       %{libname} = %{version}-%{release}
 Provides:       %{name}-devel = %{version}-%{release}
+Obsoletes:	%mklibname ksba 8 -d
 
-%description -n %{libname}-devel
+%description -n %{develname}
 KSBA is a library designed to build software based
 on the X.509 and CMS protocols.
 
@@ -67,18 +69,17 @@ applications using %{name} (For example Ägypten project).
 
 %postun -n %{libname} -p /sbin/ldconfig
 
-%post -n %{libname}-devel
+%post -n %{develname}
 %_install_info %{name}.info
 
-%postun -n %{libname}-devel
+%postun -n %{develname}
 %_remove_install_info %{name}.info
 
 %files -n %{libname}
 %defattr(-,root,root)
-%doc COPYING
-%{_libdir}/*.so.*
+%{_libdir}/*.so.%{major}*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog README THANKS TODO
 %if %mdkversion >= 1020
@@ -91,5 +92,3 @@ applications using %{name} (For example Ägypten project).
 %{_libdir}/*.a
 %{_libdir}/*.la
 %{_libdir}/*.so
-
-
