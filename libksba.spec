@@ -4,8 +4,8 @@
 
 Summary:        Library handling X.509 certificates and CMS data
 Name:           libksba
-Version:        1.0.7
-Release:        %mkrel 2
+Version:        1.0.8
+Release:        %mkrel 1
 License:        GPLv3
 Group:          System/Libraries
 URL:            http://www.gnupg.org/
@@ -88,6 +88,5 @@ applications using %{name} (For example Ägypten project).
 %{_datadir}/aclocal/*
 %{_includedir}/*.h
 %{_infodir}/*.info*
-%{_libdir}/*.a
 %{_libdir}/*.la
 %{_libdir}/*.so
