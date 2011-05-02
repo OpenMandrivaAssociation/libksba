@@ -5,14 +5,13 @@
 Summary:        Library handling X.509 certificates and CMS data
 Name:           libksba
 Version:        1.2.0
-Release:        %mkrel 1
+Release:        %mkrel 2
 License:        GPLv3
 Group:          System/Libraries
 URL:            http://www.gnupg.org/
 Source0:        ftp://ftp.gnupg.org/gcrypt/%{name}/%{name}-%{version}.tar.bz2
 Source1:        ftp://ftp.gnupg.org/gcrypt/%{name}/%{name}-%{version}.tar.bz2.sig
 BuildRequires:  libgpg-error-devel >= 1.2
-BuildRequires:  multiarch-utils >= 1.0.3
 BuildRoot:      %{_tmppath}/%{name}-%{version}-buildroot
 
 %description
@@ -83,7 +82,7 @@ applications using %{name} (For example Ägypten project).
 %files -n %{develname}
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog README THANKS TODO
-%multiarch %{multiarch_bindir}/ksba-config
+%{multiarch_bindir}/ksba-config
 %{_bindir}/ksba-config
 %{_datadir}/aclocal/*
 %{_includedir}/*.h
