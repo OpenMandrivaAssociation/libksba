@@ -4,15 +4,14 @@
 
 Summary:        Library handling X.509 certificates and CMS data
 Name:           libksba
-Version:        1.2.0
-Release:        %mkrel 2
+Version:        1.3.0
+Release:        %mkrel 1
 License:        GPLv3
 Group:          System/Libraries
 URL:            http://www.gnupg.org/
 Source0:        ftp://ftp.gnupg.org/gcrypt/%{name}/%{name}-%{version}.tar.bz2
 Source1:        ftp://ftp.gnupg.org/gcrypt/%{name}/%{name}-%{version}.tar.bz2.sig
 BuildRequires:  libgpg-error-devel >= 1.2
-BuildRoot:      %{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 KSBA is a library designed to build software based
@@ -32,7 +31,7 @@ Summary:        Development files for %{name} package
 Group:          Development/Other
 Requires:       %{libname} = %{version}-%{release}
 Provides:       %{name}-devel = %{version}-%{release}
-Obsoletes:	%mklibname ksba 8 -d
+#Obsoletes:	%mklibname ksba 8 -d
 
 %description -n %{develname}
 KSBA is a library designed to build software based
@@ -49,7 +48,6 @@ applications using %{name} (For example Ägypten project).
 %make
 
 %install
-%{__rm} -rf %{buildroot}
 %makeinstall_std
 
 %multiarch_binaries %{buildroot}%{_bindir}/ksba-config
@@ -57,23 +55,6 @@ applications using %{name} (For example Ägypten project).
 
 %check
 %make check
-
-%clean
-%{__rm} -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
-
-%post -n %{develname}
-%_install_info %{name}.info
-
-%postun -n %{develname}
-%_remove_install_info %{name}.info
 
 %files -n %{libname}
 %defattr(-,root,root)
@@ -87,5 +68,4 @@ applications using %{name} (For example Ägypten project).
 %{_datadir}/aclocal/*
 %{_includedir}/*.h
 %{_infodir}/*.info*
-%{_libdir}/*.la
 %{_libdir}/*.so
