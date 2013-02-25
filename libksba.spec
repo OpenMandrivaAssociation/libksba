@@ -11,7 +11,7 @@ Group:		System/Libraries
 URL:		http://www.gnupg.org/
 Source0:	ftp://ftp.gnupg.org/gcrypt/%{name}/%{name}-%{version}.tar.bz2
 Source1:	ftp://ftp.gnupg.org/gcrypt/%{name}/%{name}-%{version}.tar.bz2.sig
-BuildRequires:  libgpg-error-devel >= 1.2
+BuildRequires:  pkgconfig(gpg-error)
 
 %description
 KSBA is a library designed to build software based
