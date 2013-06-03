@@ -8,14 +8,14 @@ Version:	1.3.0
 Release:	2
 License:	GPLv3
 Group:		System/Libraries
-URL:		http://www.gnupg.org/
+Url:		http://www.gnupg.org/
 Source0:	ftp://ftp.gnupg.org/gcrypt/%{name}/%{name}-%{version}.tar.bz2
 Source1:	ftp://ftp.gnupg.org/gcrypt/%{name}/%{name}-%{version}.tar.bz2.sig
 BuildRequires:	pkgconfig(gpg-error)
 
 %description
-KSBA is a library designed to build software based
-on the X.509 and CMS protocols.
+KSBA is a library designed to build software based on the X.509 and CMS 
+protocols.
 
 %package -n	%{libname}
 Summary:	Library handling X.509 certificates and CMS data
@@ -23,22 +23,17 @@ Group:		System/Libraries
 Provides:	%{name} = %{version}-%{release}
 
 %description -n	%{libname}
-KSBA is a library designed to build software based
-on the X.509 and CMS protocols.
+KSBA is a library designed to build software based on the X.509 and CMS
+ protocols.
 
 %package -n	%{devname}
 Summary:	Development files for %{name} package
 Group:		Development/Other
 Requires:	%{libname} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
-#Obsoletes:	%mklibname ksba 8 -d
 
 %description -n	%{devname}
-KSBA is a library designed to build software based
-on the X.509 and CMS protocols.
-
-This package contains files needed to develop
-applications using %{name} (For example Ägypten project).
+This package contains files needed to develop applications using %{name}.
 
 %prep
 %setup -q
@@ -66,3 +61,4 @@ applications using %{name} (For example Ägypten project).
 %{_includedir}/*.h
 %{_infodir}/*.info*
 %{_libdir}/*.so
+
