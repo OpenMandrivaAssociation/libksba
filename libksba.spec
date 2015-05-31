@@ -4,13 +4,12 @@
 
 Summary:	Library handling X.509 certificates and CMS data
 Name:		libksba
-Version:	1.3.2
+Version:	1.3.3
 Release:	1
 License:	GPLv3
 Group:		System/Libraries
 Url:		http://www.gnupg.org/
 Source0:	ftp://ftp.gnupg.org/gcrypt/%{name}/%{name}-%{version}.tar.bz2
-Source1:	ftp://ftp.gnupg.org/gcrypt/%{name}/%{name}-%{version}.tar.bz2.sig
 BuildRequires:	pkgconfig(gpg-error)
 
 %description
@@ -24,7 +23,7 @@ Provides:	%{name} = %{version}-%{release}
 
 %description -n	%{libname}
 KSBA is a library designed to build software based on the X.509 and CMS
- protocols.
+protocols.
 
 %package -n	%{devname}
 Summary:	Development files for %{name} package
@@ -61,4 +60,3 @@ This package contains files needed to develop applications using %{name}.
 %{_includedir}/*.h
 %{_infodir}/*.info*
 %{_libdir}/*.so
-
