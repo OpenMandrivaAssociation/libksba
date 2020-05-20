@@ -57,3 +57,4 @@ This package contains files needed to develop applications using %{name}.
 %{_includedir}/*.h
 %{_infodir}/*.info*
 %{_libdir}/*.so
+%{_libdir}/pkgconfig/*.pc
