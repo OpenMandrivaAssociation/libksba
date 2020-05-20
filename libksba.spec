@@ -4,8 +4,8 @@
 
 Summary:	Library handling X.509 certificates and CMS data
 Name:		libksba
-Version:	1.3.5
-Release:	4
+Version:	1.4.0
+Release:	1
 License:	GPLv3
 Group:		System/Libraries
 Url:		http://www.gnupg.org/
@@ -35,14 +35,14 @@ Provides:	%{name}-devel = %{version}-%{release}
 This package contains files needed to develop applications using %{name}.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %configure
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %check
 %make check
