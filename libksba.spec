@@ -4,7 +4,7 @@
 
 Summary:	Library handling X.509 certificates and CMS data
 Name:		libksba
-Version:	1.6.0
+Version:	1.6.1
 Release:	1
 License:	GPLv3
 Group:		System/Libraries
