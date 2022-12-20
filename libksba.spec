@@ -4,7 +4,7 @@
 
 Summary:	Library handling X.509 certificates and CMS data
 Name:		libksba
-Version:	1.6.2
+Version:	1.6.3
 Release:	1
 License:	GPLv3
 Group:		System/Libraries
@@ -55,6 +55,6 @@ This package contains files needed to develop applications using %{name}.
 %{_bindir}/ksba-config
 %{_datadir}/aclocal/*
 %{_includedir}/*.h
-%{_infodir}/*.info*
+%doc %{_infodir}/*.info*
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
