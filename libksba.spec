@@ -1,16 +1,18 @@
 %define major 8
-%define libname %mklibname ksba %{major}
+%define oldlibname %mklibname ksba 8
+%define libname %mklibname ksba
 %define devname %mklibname ksba -d
 
 Summary:	Library handling X.509 certificates and CMS data
 Name:		libksba
-Version:	1.6.6
+Version:	1.6.7
 Release:	1
 License:	GPLv3
 Group:		System/Libraries
 Url:		http://www.gnupg.org/
 Source0:	https://www.gnupg.org/ftp/gcrypt/libksba/libksba-%{version}.tar.bz2
 BuildRequires:	pkgconfig(gpg-error)
+BuildSystem:	autotools
 
 %description
 KSBA is a library designed to build software based on the X.509 and CMS 
@@ -20,6 +22,8 @@ protocols.
 Summary:	Library handling X.509 certificates and CMS data
 Group:		System/Libraries
 Provides:	%{name} = %{version}-%{release}
+# Fixed after 5.0
+%rename %{oldlibname}
 
 %description -n %{libname}
 KSBA is a library designed to build software based on the X.509 and CMS
@@ -34,18 +38,9 @@ Provides:	%{name}-devel = %{version}-%{release}
 %description -n %{devname}
 This package contains files needed to develop applications using %{name}.
 
-%prep
-%autosetup -p1
-
-%build
-%configure
-%make_build
-
-%install
-%make_install
-
 %check
-%make check
+cd _OMV_rpm_build
+%make_build check
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*
