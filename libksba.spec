@@ -11,6 +11,7 @@ License:	GPLv3
 Group:		System/Libraries
 Url:		https://www.gnupg.org/
 Source0:	https://www.gnupg.org/ftp/gcrypt/libksba/libksba-%{version}.tar.bz2
+BuildRequires:	make
 BuildRequires:	pkgconfig(gpg-error)
 BuildSystem:	autotools
 
