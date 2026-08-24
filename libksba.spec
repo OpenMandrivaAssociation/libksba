@@ -5,7 +5,7 @@
 
 Summary:	Library handling X.509 certificates and CMS data
 Name:		libksba
-Version:	1.8.0
+Version:	1.8.1
 Release:	1
 License:	GPLv3
 Group:		System/Libraries
@@ -33,7 +33,7 @@ protocols.
 %package -n %{devname}
 Summary:	Development files for %{name} package
 Group:		Development/Other
-Requires:	%{libname} = %{version}-%{release}
+Requires:	%{libname} = %{EVRD}
 Provides:	%{name}-devel = %{version}-%{release}
 
 %description -n %{devname}
